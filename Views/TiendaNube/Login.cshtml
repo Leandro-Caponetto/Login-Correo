@@ -1,0 +1,52 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+    <form method="post" action="/tiendanube/LoginUserCA" enctype="multipart/form-data">
+        <div class="main">
+            <div class="card LogIn">
+                <div class="LogInHeader border-bottom">
+                    <p id="titulo">Ingresá a tu cuenta</p>
+                </div>
+                <div class="LogInBody">
+                    <div class="mb-3 row text-sm-right">
+                        <label class="col-sm-4 col-form-label correo">Correo electrónico</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" name="Username" id="inputPassword" data-val="true" data-val-required="El campo es requerido">
+                            <span class="text-danger field-validation-valid" data-valmsg-for="Username" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+                    <div class="mb-3 row text-sm-right">
+                        <label class="col-sm-4 col-form-label correo">Contraseña</label>
+                        <div class="col-sm-8">
+                            <input type="password" class="form-control" name="Password" id="Password" data-val="true" data-val-required="El campo es requerido">
+                            <span class="text-danger field-validation-valid" data-valmsg-for="Password" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="mb-3 row text-sm-right">
+                        <span class="Error">
+                            @{
+                                if (ViewBag.Error)
+                                {
+                                    <span>@ViewBag.ErrorMessage</span>
+                                }
+                            }
+                        </span>
+                    </div>
+                    <div class="LogInFooter">
+                        <div class="Registrarse">
+                            <a href="@Url.Action("RegisterUserCA", "tiendanube")" class="link">Registrarse</a>
+                        </div>
+                        <div class="Registrarse">
+                            <a href="https://www.correoargentino.com.ar/MiCorreo/public/password/reset" class="link">Olvidé mi contraseña</a>
+                        </div>
+                        <button type="submit" id="Ingresa" title="Si ya tenés usuario y contraseña accedé desde aquí">Ingresá</button>
+                    </div>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </form>
+    @{
+
+    }

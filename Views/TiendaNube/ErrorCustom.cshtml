@@ -1,0 +1,19 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Correo Argentino";
+}
+<div class="container d-flex justify-content-center">
+    <div class="border border-custom aviso d-flex flex-column justify-content-center align-items-center">
+        <p class="IngresoFallidoText">@Html.Raw(@ViewBag.ErrorMessage)</p>
+        <br />
+        <p class="correo">Hola! Para poder ayudarte envianos este mensaje de error a través de la sección reclamos en MiCorreo o bien a AtencionClienteMedio@correoargentino.com.ar indicando tu número de cliente en Correo. Gracias!</p>
+        <br />
+        <button class="BotonLogIn" onclick="window.location.href='https://www.tiendanube.com/tu-tienda';">Continuar</button>
+    </div>
+</div>
+
+@{
+
+}

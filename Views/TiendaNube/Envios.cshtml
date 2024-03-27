@@ -1,0 +1,55 @@
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Importación de ordenes";
+    //ViewData["onload"] = "check_close()";
+}
+<!--div class="container d-flex justify-content-center"-->
+<div class="border border-custom aviso d-flex flex-column justify-content-center align-items-center">
+    <p></p>
+    <!--aviso d-flex flex-column justify-content-center align-items-center-->
+    <p id="prgrsshead" class="IngresoEnviosText">Estamos procesando tus ordenes...</p>
+    <progress id="prgrss" value="0" max="100" style="width:70%"></progress>
+    <table id="table" class="table table-striped table-earning" hidden>
+        <thead>
+            <tr>
+                <th>N° Orden</th>
+                <th>Observación</th>
+            </tr>
+        </thead>
+        <tbody id="output"></tbody>
+    </table>
+    <p class="correo" id="prgrsstail">Por favor, no cierres el navegador.</p>
+    <br />
+    <div id="buttons" hidden>
+        <a class="BotonLogIn" id="buttonReview" onclick="showResult(this)" hidden>Revisar</a>
+        <!--<a class="BotonLogIn" id="buttonBack" href="javascript:void(0);" onclick="history.go(-1);" hidden>Volver</a>-->
+        <script>
+            const historyLength = window.history.length;
+
+            if (historyLength != null && historyLength > 1) {
+                //Open url in the same tab
+
+                document.write('<a class="BotonLogIn" id="buttonBack" href="javascript:void(0);" onclick="history.go(-1);" hidden>Volver</a>');
+            } else {
+                //Open url in a new tab
+
+                function windowClose() {
+                    window.open('', '_parent', '');
+                    window.close();
+                }
+
+                document.write('<a class="BotonLogIn" id="buttonBack" href="javascript:void(0);" onclick="windowClose();" hidden>Cerrar</a>');
+            }
+        </script>
+        <a href="https://www.correoargentino.com.ar/MiCorreo/public/login" class="BotonLogIn" id="buttonGoTo" hidden>Ir a MiCorreo</a>
+    </div>
+    <p></p>
+</div>
+<!--/div-->
+
+<script src="~/js/addnewordersv3.js"></script>
+
+@{
+}
